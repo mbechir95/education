@@ -1,0 +1,70 @@
+<!-- your-component-template.html -->
+
+<app-banner [b]="title"></app-banner>
+
+<div class="container-fluid py-5">
+    <form action="" #addEvaluationForm="ngForm" (ngSubmit)="addEvaluation()">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- <div class="col-lg-5">
+          <img class="img-fluid rounded mb-5 mb-lg-0" src="{{findedUser.avatar}}" alt="" />
+        </div> -->
+                <div class="col-lg-7">
+                    <p class="section-title pr-5">
+                        <span class="pr-2">Evaluation Details </span>
+                    </p>
+
+                    <div class="row pt-2 pb-4">
+                        <div class="col-6 col-md-8">
+                            <ul class="list-inline m-0">
+                                <li class="py-2 border-top border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i> teacher Name :
+                                    {{findedUser.firstName}} {{findedUser.lastName}}
+                                </li>
+                                <li class="py-2 border-top border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i>course name :
+                                    {{findedCourse.nameCourse}}
+                                </li>
+                                <li class="py-2 border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i> Student Name :
+                                    <div class="form-group">
+                                        <select [(ngModel)]="findedSession.idStudent" name="idStudent"
+                                            class="custom-select border-0 px-4" style="height: 47px" required>
+                                            <option *ngFor="let fSession of findedSession" [value]="fSession.idStudent">
+                                                {{fSession.fNameStudent}} {{fSession.lNameStudent}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li class="py-2 border-top border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i> select Note
+                                    <input class="form-control" type="number" name="note" [(ngModel)]="obj.note" required>
+                                </li>
+
+                                <li class="py-2 border-top border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i> select Evaluation
+                                    <select class="form-select" aria-label="Default select example" name="evaluation"
+                                        [(ngModel)]="obj.evaluation" required>
+                                        <option selected>Select Evaluation</option>
+                                        <option value="Insuffisant">Insuffisant</option>
+                                        <option value="Médiocre">Médiocre</option>
+                                        <option value="Passable">Passable</option>
+                                        <option value="Assez bien">Assez bien</option>
+                                        <option value="Bien">Bien</option>
+                                        <option value="Très bien">Très bien</option>
+                                        <option value="Excellent">Excellent</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <div>
+                                {{errorMsg}}
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2 py-2 px-4"[disabled]="!obj.evaluation || !obj.note || !findedSession.idStudent">Evaluer</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

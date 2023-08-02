@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="widget-next-match">
+      <table class="table custom-table">
+        <thead>
+          <tr>
+            <th>session ID</th>
+            <th>course Name</th>
+            <th>teacher Name</th>
+            <th>students names</th>
+     
+            <th>Action</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor ="let session of sessions">
+            <td>{{session._id}}</td>
+            <td>{{session.nameCourse}}<strong class="text-white"></strong></td>
+            <td>{{session.firstNameTeacher}} {{session.lastNameTeacher}}</td>
+            <td>{{session.fNameStudent}} {{session.lNameStudent}}</td>
+            
+            <td>
+              <button class="btn btn-primary py-2 px-4 "(click)=goToDisplay(user._id)>Display</button>
+              <button   class="btn btn-warning"(click)=verifieTeacher(user._id) >validate</button>
+              <button class="btn btn-danger"(click)=DeleteSession(session._id)>Delete</button>
+          </td>
+           
+          </tr>  
+    
+         
+        </tbody>
+      </table>
+    </div>
+    </div>

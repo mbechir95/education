@@ -1,0 +1,41 @@
+<app-banner [b]="title"></app-banner>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Students</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Teachers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            aria-selected="false">Courses</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="stadium-tab" data-toggle="tab" href="#stadium" role="tab" aria-controls="contact"
+            aria-selected="false">Parents</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="affectation-tab" data-toggle="tab" href="#aaa" role="tab" aria-controls="contact"
+            aria-selected="false">affectation</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+         <app-students-table></app-students-table> 
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <app-teachers-table></app-teachers-table>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <app-courses-table></app-courses-table>
+    </div>
+    <div class="tab-pane fade" id="stadium" role="tabpanel" aria-labelledby="stadium-tab">
+    <app-parents-table></app-parents-table>
+    </div>
+    <div class="tab-pane fade" id="aaa" role="tabpanel" aria-labelledby="affectation-tab">
+        <app-affectation-table></app-affectation-table>
+    </div>
+</div>

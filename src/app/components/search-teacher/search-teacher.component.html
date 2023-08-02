@@ -1,0 +1,32 @@
+<!-- <app-banner [b]="title"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <form #searchForm="ngForm" (ngSubmit)="search()">
+          <div class="form-group">
+            <input [(ngModel)]="term" name="term" type="text" class="form-control"
+              placeholder="search teacher by name">
+          </div>
+
+
+
+          <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary py-3 px-5" value="search">
+          </div>
+        </form>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div *ngIf="teachers.length == 0">
+  teachers not found
+</div>
+<div *ngFor="let teacher of teachers | filter:term">
+  <app-teacher-details [H]="teacher"></app-teacher-details> 
+</div> -->

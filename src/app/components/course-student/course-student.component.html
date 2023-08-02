@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="widget-next-match">
+      <table class="table custom-table">
+        <thead>
+          <tr class="text-center">
+            <th>ID Course</th>
+            <th> Teacher Name</th>
+            <th> Name Course</th>
+            <th>Duration</th>
+            <th>Action</th>
+           
+          </tr>
+        </thead>
+        <tbody class="text-center">
+           <tr *ngFor ="let course of findedSession">
+            <td>{{course.idCourse}}</td>
+            <td>{{course.firstNameTeacher}} {{course.lastNameTeacher}}<strong class="text-white"></strong></td>
+            <td>{{course.nameCourse}}</td>
+            <td>{{course.durationCourse}}</td>
+            <td>
+              <button class="btn btn-primary py-2 px-4 "(click)=goToDisplay(course.idCourse)>Display</button>
+           
+          </td>
+           
+          </tr>  
+    
+         
+        </tbody>
+      </table>
+    </div>
+    </div>

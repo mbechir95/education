@@ -1,0 +1,119 @@
+<app-banner [b]="title"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5">
+                <span class="px-2">Get In Touch </span>
+            </p>
+            <h1 class="mb-4">Signup Parent</h1>
+        </div>
+        <div class="mb-4">
+            <div class="">
+                <div class="contact-form ">
+                    <div id="success"></div>
+                    <form [formGroup]="signupParentForm">
+                        <div class="control-group">
+                            <input formControlName="firstName" type="text" class="form-control"
+                                placeholder="First Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['firstName'].invalid && 
+                      (signupParentForm.controls['firstName'].touched||signupParentForm.controls['firstName'].dirty)">
+                            <div *ngIf="signupParentForm.controls['firstName'].errors.required">FN is required</div>
+
+                            <div *ngIf="signupParentForm.controls['firstName'].errors.minlength">FN is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="lastName" type="text" class="form-control"
+                                placeholder="Last Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['lastName'].invalid && 
+                      (signupParentForm.controls['lastName'].touched||signupParentForm.controls['lastName'].dirty)">
+                            <div *ngIf="signupParentForm.controls['lastName'].errors.required">LN is required</div>
+
+                            <div *ngIf="signupParentForm.controls['lastName'].errors.minlength">LN is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="email" type="email" class="form-control" id="email"
+                                placeholder="Your Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['email'].invalid && 
+                      (signupParentForm.controls['email'].touched||signupParentForm.controls['email'].dirty)">
+                            <div *ngIf="signupParentForm.controls['email'].errors.required">email is required</div>
+
+                            <div *ngIf="signupParentForm.controls['email'].errors.email">email is invalid </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="tel" type="number" class="form-control" id="subject"
+                                placeholder="Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['tel'].invalid && 
+                  (signupParentForm.controls['tel'].touched||signupParentForm.controls['tel'].dirty)">
+                            <div *ngIf="signupParentForm.controls['tel'].errors.required">tel is required</div>
+
+                            <div *ngIf="signupParentForm.controls['tel'].errors.minlength">tel is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="confTel" type="number" class="form-control" id="tel"
+                                placeholder="confirm your son's tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div
+                            *ngIf="signupParentForm.controls['confTel'].invalid && 
+                             (signupParentForm.controls['confTel'].touched||signupParentForm.controls['confTel'].dirty)">
+                            <div *ngIf="signupParentForm.controls['confTel'].errors.required">confTel is
+                                required</div>
+
+                            <div *ngIf="signupParentForm.controls['confTel'].errors.minlength">confTel is min 3
+                            </div>
+
+                        </div>
+                       
+                        <div class="control-group">
+                            <input formControlName="password" type="password" class="form-control" id="password"
+                                placeholder="your password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['password'].invalid && 
+                             (signupParentForm.controls['password'].touched||signupParentForm.controls['password'].dirty)">
+                            <div *ngIf="signupParentForm.controls['password'].errors.required">password is required
+                            </div>
+
+                        </div>
+                       
+                        <div class="control-group">
+                            <textarea formControlName="adress" class="form-control" rows="3"
+                                placeholder="Adress"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupParentForm.controls['adress'].invalid && 
+                             (signupParentForm.controls['adress'].touched||signupParentForm.controls['adress'].dirty)">
+                            <div *ngIf="signupParentForm.controls['adress'].errors.required">adress is required</div>
+
+                            <div *ngIf="signupParentForm.controls['adress'].errors.minlength">adress is min 3 </div>
+
+                        </div>
+
+                        <div class="text-center">
+
+                            <button class="btn btn-primary py-2 px-4 " [disabled]="signupParentForm.invalid" (click)="signupParent()">
+                                Signup
+                            </button>
+                        </div>
+                        <div>
+                            {{errorMsg}}
+                          </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

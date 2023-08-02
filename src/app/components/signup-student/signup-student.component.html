@@ -1,0 +1,125 @@
+<app-banner [b]="title"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5">
+                <span class="px-2">Get In Touch </span>
+            </p>
+            <h1 class="mb-4">Signup Student</h1>
+        </div>
+        <div class="mb-4">
+            <div class="">
+                <div class="contact-form ">
+                    <div id="success"></div>
+                    <form [formGroup]="signupStudentForm">
+                        <div class="control-group">
+                            <input formControlName="firstName" type="text" class="form-control"
+                                placeholder="First Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div
+                            *ngIf="signupStudentForm.controls['firstName'].invalid && 
+                      (signupStudentForm.controls['firstName'].touched||signupStudentForm.controls['firstName'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['firstName'].errors.required">FN is required</div>
+
+                            <div *ngIf="signupStudentForm.controls['firstName'].errors.minlength">FN is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="lastName" type="text" class="form-control"
+                                placeholder="Last Name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupStudentForm.controls['lastName'].invalid && 
+                      (signupStudentForm.controls['lastName'].touched||signupStudentForm.controls['lastName'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['lastName'].errors.required">LN is required</div>
+
+                            <div *ngIf="signupStudentForm.controls['lastName'].errors.minlength">LN is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="email" type="email" class="form-control" id="email"
+                                placeholder="Your Email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupStudentForm.controls['email'].invalid && 
+                      (signupStudentForm.controls['email'].touched||signupStudentForm.controls['email'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['email'].errors.required">email is required</div>
+
+                            <div *ngIf="signupStudentForm.controls['email'].errors.email">email is invalid </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="tel" type="number" class="form-control" id="subject"
+                                placeholder="Tel" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupStudentForm.controls['tel'].invalid && 
+                  (signupStudentForm.controls['tel'].touched||signupStudentForm.controls['tel'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['tel'].errors.required">tel is required</div>
+
+                            <div *ngIf="signupStudentForm.controls['tel'].errors.minlength">tel is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="password" type="password" class="form-control" id="subject"
+                                placeholder="your password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupStudentForm.controls['password'].invalid && 
+                  (signupStudentForm.controls['password'].touched||signupStudentForm.controls['password'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['password'].errors.required">password is required
+                            </div>
+
+                            <div *ngIf="signupStudentForm.controls['password'].errors.minlength">password is min 3
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input formControlName="confPassword" type="password" class="form-control" id="subject"
+                                placeholder="confirm your password" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div
+                            *ngIf="signupStudentForm.controls['confPassword'].invalid && 
+                  (signupStudentForm.controls['confPassword'].touched||signupStudentForm.controls['confPassword'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['confPassword'].errors.required">confPassword is
+                                required</div>
+
+                            <div *ngIf="signupStudentForm.controls['confPassword'].errors.minlength">password is min 3
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <textarea formControlName="adress" class="form-control" rows="3"
+                                placeholder="Adress"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="signupStudentForm.controls['adress'].invalid && 
+                  (signupStudentForm.controls['adress'].touched||signupStudentForm.controls['adress'].dirty)">
+                            <div *ngIf="signupStudentForm.controls['adress'].errors.required">adress is required</div>
+
+                            <div *ngIf="signupStudentForm.controls['adress'].errors.minlength">adress is min 3 </div>
+
+                        </div>
+                        <div class="control-group">
+                            <input type="file" class="control-group" placeholder="file" style="visibility: hidden;"
+                                #filePicker (change)="onImageSelected($event)">
+                        </div>
+                        <div class="text-center">
+                            <button class=" btn btn-primary py-2 px-4  " (click)="filePicker.click()"> download your
+                                image</button>
+                            <div class="text-center mt-5 mb-5">
+                                <img [src]="imagePreview" alt="">
+                            </div>
+                            <button class="btn btn-primary py-2 px-4 " [disabled]="signupStudentForm.invalid" (click)="signupStudent()">
+                                Signup
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

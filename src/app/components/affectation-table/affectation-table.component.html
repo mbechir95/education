@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="widget-next-match">
+        <form #addSessionForm="ngForm" (ngSubmit)="addSession()">
+            <table class="table custom-table">
+                <thead>
+                    <tr class="text-center">
+
+                        <th>student Name </th>
+                        <th>Name Course</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="text-center">
+
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <select [(ngModel)]="obj.idStudent" name="idStudent" id="aaa"
+                                    class="custom-select border-0 px-4" style="height: 47px" #idStudent="ngModel" required>
+                                    <option *ngFor="let user of users" [value]="user._id">{{user.firstName}}
+                                        {{user.lastName}} </option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select [(ngModel)]="obj.idCourse" name="idCourse" id="bbb"
+                                    class="custom-select border-0 px-4" style="height: 47px" #idCourse="ngModel" required>
+                                    <option *ngFor="let course of courses" [value]="course._id">{{course.nameCourse}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                {{errorMsg}}
+                            </div>
+                        </td>
+
+                        <td>
+                            <button  class="btn btn-primary py-2 px-4 " [disabled]="!obj.idStudent || !obj.idCourse">affect</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </form>
+    </div>
+</div>

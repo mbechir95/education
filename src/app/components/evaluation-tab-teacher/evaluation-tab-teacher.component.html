@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="widget-next-match">
+      <table class="table custom-table">
+        <thead>
+          <tr class="text-center">
+            <th>ID evaluation</th>
+            <th>Teacher name</th>
+            <th> Name Course</th>
+            <th>ID student</th>
+            <th>evaluation</th>
+            <th>note</th>
+            <th>Action</th>
+           
+          </tr>
+        </thead>
+        <tbody class="text-center">
+           <tr *ngFor ="let evaluation of findedEvaluation">
+            <td>{{evaluation._id}}</td>
+            <td>{{evaluation.firstNameTeacher}} {{evaluation.firstNameTeacher}}<strong class="text-white"></strong></td>
+            <td>{{evaluation.nameCourse}}</td>
+            <td>{{evaluation.idStudent}}</td>
+            <td>{{evaluation.eval}}</td>
+            <td>{{evaluation.note}}</td>
+            <td>
+              <button class="btn btn-primary py-2 px-4 "(click)=goToDisplay(evaluation._id)>Display</button>
+              <button class="btn btn-warning"(click)=goToEdit(evaluation._id)>Edit</button>
+              <button class="btn btn-danger"(click)=DeleteEvaluation(evaluation._id)>Delete</button>
+          </td>
+           
+          </tr>  
+    
+         
+        </tbody>
+      </table>
+    </div>
+    </div>

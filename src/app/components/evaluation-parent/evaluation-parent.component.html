@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="widget-next-match">
+      <table class="table custom-table">
+        <thead>
+          <tr class="text-center">
+            <th>ID Course</th>
+            <th> Teacher Name</th>
+            <th> Name Course</th>
+            <th>evaluation</th>
+            <th>note</th>
+           
+          </tr>
+        </thead>
+        <tbody class="text-center">
+           <tr *ngFor ="let course of findedEvaluations">
+            <td>{{course.idCourse}}</td>
+            <td>{{course.firstNameTeacher}} {{course.lastNameTeacher}}<strong class="text-white"></strong></td>
+            <td>{{course.nameCourse}}</td>
+            <td>{{course.eval}}</td>
+            <td>{{course.note}}</td>
+            <td>
+           
+          </td>
+           
+          </tr>  
+    
+         
+        </tbody>
+      </table>
+    </div>
+    </div>

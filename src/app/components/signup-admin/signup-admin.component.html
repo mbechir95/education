@@ -1,0 +1,117 @@
+<app-banner [b]="title"></app-banner>
+<div class="container-fluid pt-5">
+  <div class="container">
+      <div class="text-center pb-2">
+          <p class="section-title px-5">
+              <span class="px-2">Get In Touch </span>
+          </p>
+          <h1 class="mb-4">Signup Admin</h1>
+      </div>
+      <div class="mb-4">
+          <div class="">
+              <div class="contact-form ">
+                  <div id="success"></div>
+                  <form [formGroup]="signupAdminForm">
+                      <div class="control-group">
+                          <input formControlName="firstName" type="text" class="form-control"
+                              placeholder="First Name" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                          *ngIf="signupAdminForm.controls['firstName'].invalid && 
+                      (signupAdminForm.controls['firstName'].touched||signupAdminForm.controls['firstName'].dirty)">
+                          <div *ngIf="signupAdminForm.controls['firstName'].errors.required">FN is required</div>
+
+                          <div *ngIf="signupAdminForm.controls['firstName'].errors.minlength">FN is min 3 </div>
+
+                      </div>
+                      <div class="control-group">
+                          <input formControlName="lastName" type="text" class="form-control"
+                              placeholder="Last Name" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                          *ngIf="signupAdminForm.controls['lastName'].invalid && 
+                      (signupAdminForm.controls['lastName'].touched||signupAdminForm.controls['lastName'].dirty)">
+                          <div *ngIf="signupAdminForm.controls['lastName'].errors.required">LN is required</div>
+
+                          <div *ngIf="signupAdminForm.controls['lastName'].errors.minlength">LN is min 3 </div>
+
+                      </div>
+                      <div class="control-group">
+                          <input formControlName="email" type="email" class="form-control" id="email"
+                              placeholder="Your Email" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                          *ngIf="signupAdminForm.controls['email'].invalid && 
+                      (signupAdminForm.controls['email'].touched||signupAdminForm.controls['email'].dirty)">
+                          <div *ngIf="signupAdminForm.controls['email'].errors.required">email is required</div>
+
+                          <div *ngIf="signupAdminForm.controls['email'].errors.email">email is invalid </div>
+
+                      </div>
+                      <div class="control-group">
+                          <input formControlName="tel" type="number" class="form-control" id="subject"
+                              placeholder="Tel" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                      *ngIf="signupAdminForm.controls['tel'].invalid && 
+                  (signupAdminForm.controls['tel'].touched||signupAdminForm.controls['tel'].dirty)">
+                      <div *ngIf="signupAdminForm.controls['tel'].errors.required">tel is required</div>
+
+                      <div *ngIf="signupAdminForm.controls['tel'].errors.minlength">tel is min 3 </div>
+
+                  </div>
+                      <div class="control-group">
+                          <input formControlName="password" type="password" class="form-control" id="subject"
+                              placeholder="your password" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                      *ngIf="signupAdminForm.controls['password'].invalid && 
+                  (signupAdminForm.controls['password'].touched||signupAdminForm.controls['password'].dirty)">
+                      <div *ngIf="signupAdminForm.controls['password'].errors.required">password is required</div>
+
+                      <div *ngIf="signupAdminForm.controls['password'].errors.minlength">password is min 3 </div>
+
+                  </div>
+                      <div class="control-group">
+                          <input formControlName="confPassword" type="password" class="form-control" id="subject"
+                              placeholder="confirm your password" />
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                      *ngIf="signupAdminForm.controls['confPassword'].invalid && 
+                  (signupAdminForm.controls['confPassword'].touched||signupAdminForm.controls['confPassword'].dirty)">
+                      <div *ngIf="signupAdminForm.controls['confPassword'].errors.required">confPassword is required</div>
+
+                      <div *ngIf="signupAdminForm.controls['confPassword'].errors.minlength">password is min 3 </div>
+
+                  </div>
+                      <div class="control-group">
+                          <textarea formControlName="adress" class="form-control" rows="3"
+                              placeholder="Adress"></textarea>
+                          <p class="help-block text-danger"></p>
+                      </div>
+                      <div
+                      *ngIf="signupAdminForm.controls['adress'].invalid && 
+                  (signupAdminForm.controls['adress'].touched||signupAdminForm.controls['adress'].dirty)">
+                      <div *ngIf="signupAdminForm.controls['adress'].errors.required">adress is required</div>
+
+                      <div *ngIf="signupAdminForm.controls['adress'].errors.minlength">adress is min 3 </div>
+
+                  </div>    
+                      <div>
+                          <button class="btn btn-primary py-2 px-4 " (click)="signupAdmin()">
+                              Signup
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
